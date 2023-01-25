@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.치료::after {content: ""; clear: both; display: block;}
+
+.전체 {
+  color: #fff;
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 30px;
+  background-color: rgb(226, 226, 226);
+  height: 600px;
+}
+
+.전체 .첫째 { 
+  background-color: #000;
+  padding: 20px;
+}
+
+.전체 .첫째 .첫자{ 
+  background: #0A2647;
+  width: 32%;
+  margin-right: 2%;
+  height: 200px;
+  float: left;
+}
+
+.전체 .첫째 .첫자.첫자1{
+  position: relative;
+  overflow: hidden;
+}
+
+.전체 .첫째 .첫자.첫자1 .하{
+  background-image: url(../image/img1.jpg); /* ../ 상위요소를 부름 */
+  height: 100%; /*자식은 부모의 높이를 따라가지않음 */
+  background-size: cover;
+  background-position: center center;
+  /* =background-position: center; */
+  position: relative;
+}
+.전체 .첫째 .첫자.첫자1 .하 h4{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자1 .상 {
+  height: 100%;
+  background-image: url(../image/img2.jpg);
+  background-size: cover;
+  background-position: center;
+  /* position: absolute; 되면 자식의 공간만 차지 
+  넓이를 다시 설정해야함
+  */
+  position: absolute;
+  left: 100%; top: 0; /*overflow를 쓰기위해*/
+  width: 100%;
+  transition: 0.3s;
+}
+
+.전체 .첫째 .첫자.첫자1:hover .상 {
+  left: 0;
+}
+
+.전체 .첫째 .첫자.첫자1 .상 h4{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자2{
+  position: relative;
+  overflow: hidden;
+}
+
+.전체 .첫째 .첫자.첫자2>div{
+  height: 100%;
+  position: absolute; /* 둘다(상.하) absoiute 시켰을 땐 뒤에 적은 코드가 위로 올라간다 */
+  left: 0; top: 0;
+  width: 100%;
+}
+
+.전체 .첫째 .첫자.첫자2>div h4{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자2 .상{
+  background-image: url(../image/img3.jpg);
+  background-size: cover;
+  background-position: center;
+  /* z-index는 position(relative, absoiute, fixed)이 있어야 사용가능*/
+  z-index: 2; 
+  /* div에 position: absoiute가 있기때문에 적용가능 */
+  top: -100%;
+  transition: 0.3s;
+}
+
+.전체 .첫째 .첫자.첫자2:hover .상{
+  top: 0;
+}
+
+.전체 .첫째 .첫자.첫자2 .상 h4{}
+
+.전체 .첫째 .첫자.첫자2 .하{
+  background-image: url(../image/img4.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.전체 .첫째 .첫자.첫자2 .하 h4{}
+
+.전체 .첫째 .첫자.첫자3{
+  margin-right: 0;
+  position: relative;
+}
+
+.전체 .첫째 .첫자.첫자3>div {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+}
+.전체 .첫째 .첫자.첫자3>div h4 {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자3 .상 {
+  background-image: url(../image/img6.jpg);
+  z-index: 10; /*1보다 많은 숫자만 들어가면됨 */
+  transition: 0.3S;
+  opacity: 0;
+  transform: scale(0.3);
+  transition-timing-function:cubic-bezier(0.32, 0.32, 0, 1.94);
+}
+
+.전체 .첫째 .첫자.첫자3:hover .상 {
+  opacity: 1;
+  /* 존재는 하는데 투명도가 0이 되는 것 */
+  transform: scale(1);
+  border-radius: 50%;
+}
+
+.전체 .첫째 .첫자.첫자3 .하 {
+  background-image: url(../image/img5.jpg);
+}
+
+
+.전체 .둘째 {
+  background-color: #0A2647;
+  /* %의 기준
+  width --> 부모(.전체)의 넓이
+  height --> 부모(.전체)의 높이
+            단 부모가 높이값이 있어야한다
+  padding 또는 margin은 상하좌우 모두 부모의 넓이를 기준
+  */
+  height: 30%;
+  width: 30%;
+  padding: 5%;
+  margin-top: 5%;
+}

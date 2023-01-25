@@ -1,0 +1,76 @@
+@charset "UTF-8"; /*반드시 세미콜론(;)으로 마무리해야한다*/
+
+*{margin: 0; padding: 0;}
+
+/*reset*/
+/* 폰트크기의 기본값은 16px */
+h1,h2,h3,h4,h5,h6 {
+  font-size: 16px;
+  font-weight: normal;  /* 폰트두께 */
+  }
+a {
+  text-decoration: none; /* 밑줄 */
+  color: #223344; /* color #234 */
+  /* clolor:#113345; 줄이지 못함 */
+}
+
+
+.약::after {content: ""; clear: both; display: block;}
+
+.전체 {
+  background-color: #FFFBEB;
+  width: 1000px;
+  margin: 30px auto 0; /*위30 양쪽오토 아래0*/
+  padding: 20px;
+  box-sizing: border-box;
+}
+.전체>div + div {margin-top: 30px;} /* + : 형제를 나타낸다. 형이 있는 div를 찾는방법 */
+
+.전체 .첫째{
+  background-color: #495579;
+  padding: 20px;
+}
+
+.전체 .첫째:hover{
+    color: #DFF6FF;
+}
+
+.전체 .첫째 .첫자 {
+  background-color: #7583ac;
+  width: 49%;
+  height: 200px;
+  float: left;
+}
+.전체 .첫째 .첫자.첫째자식1{
+  margin-right: 2%;
+}
+
+.전체 .첫째 .첫자.첫째자식2{}
+
+
+
+.전체 .둘째{background-color: rgb(248, 248, 248);}
+
+.전체 .둘째 .앵커 {
+  background-color: #c8d3dd;
+}
+
+.전체 .둘째 p {width: 150px;
+  margin-top: 20px;}
+.전체 .둘째 p a{}
+.전체 .둘째 p a img{width: 100%;}
+/* 
+인라인 요소는 공간을 인식하지 못한다.
+그래서 넓이,높이값을 주어도 적용되지 않는다.
+단, 예외가 있다. img, button 태그는 인라인 요소지만 넓이와 높이가 적용된다.
+
+인라인 요소 안에는 인라인 요소만 들어간다
+(인라인 요소 안에 브럭요소 들어가지 않음)
+블럭 요소 안에는 인라인 요소, 블럭요소 모두 들어감
+span p (x)
+p span (O)
+span img (O)
+html 에서만 해당되고 CSS는 display로 바꿔서 사용가능하다.
+*/
+
+.전체 .세째{background-color: #AEBDCA;}

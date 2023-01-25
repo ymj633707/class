@@ -1,0 +1,246 @@
+@charset "UTF-8";
+*{margin: 0; top: 0;}
+.clear:after{
+  content: "";
+  clear:both;
+  display: block;
+}
+
+.전체 {
+  background-color: #FFF8E1;
+  width: 1000px; margin: 0 auto;
+  margin-top: 100px;
+  padding: 30px 0;
+}
+.전체 .첫째{
+  background-color: #ADA2FF;
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box; 
+}
+.전체 .첫째>div {
+  background-color: #C0DEFF;
+  height: 200px;
+  width: 47.5%;
+  float: left;
+}
+.전체 .첫째 .첫손1{
+  position: relative;
+  margin-right: 5%;
+  background-image: url(img/img1.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+.전체 .첫째 .첫손1 h4 {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(255,255,255,0.3); /*마지막 a는 투명도 */
+  color: #222;
+  padding: 10px 30px;
+  border-radius: 10px;
+  }
+
+  .전체 .첫째 .첫손1 .right {
+    position: absolute;
+    left: 100%; /*어느쪽으로 해도 상관없다 */
+    top: 0; 
+    width: 100%;
+    height: 100%;
+    background: url(img/img2.jpg);
+    background-size: cover;
+    transition: 0.3s;
+  }
+
+  .전체 .첫째 .첫손1:hover .right{ /*right는 오른쪽에 가있어서 우리눈에 안보이므로 첫손1에 hover를 준다*/
+    left: 0;
+  }
+
+
+.전체 .첫째 .첫손2{
+  position: relative;
+  overflow: hidden;
+}
+.전체 .첫째 .첫손2 video{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 110%;
+}
+
+
+
+.전체 .둘째 {
+  background-color: #2D033B;
+  width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.전체 .둘째 >div{
+  background-color: #810CA8;
+  width: 23.5%;
+  margin-right: 2%;
+  float: left;
+  height: 200px;
+  position: relative;
+}
+
+.전체 .둘째 .둘자4{
+  margin-right: 0;
+}
+
+.전체 .둘째 >div>div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-color: #E1CCEC;
+  transform: translate(-50%,-50%);
+  height: 40px; width: 100px;
+  text-align: center;
+  line-height: 40px; /*글자가 한줄일때 line-height를 높이값 그대로 주면 가운데 위치하게됨 */
+}
+
+.전체 .둘째 >div>div.둘손2 {
+  left: auto; /*관여하지말라는 뜻으로 auto를 씀 */
+  top: auto;
+  right: 0;
+  bottom: 0;
+  transform: none;
+}
+
+.전체 .둘째 >div>div.둘손3 {
+  left: auto;
+  right: 0;
+  transform: none;
+  top: 0;
+}
+
+.전체 .둘째 >div>div.둘손4 {
+  left: 0;
+  transform: none;
+  top: auto;
+  bottom: 0;
+}
+
+.전체 .셋째 { /*셋째 위 공간은 둘째에 margin:30px를 줬기때문에 생김 */
+  background-color: #E4D8DC;
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.전체 .셋째>div {
+  background-color: #F7DBF0;
+  width: 45%;
+  float: left;
+  height: 200px;
+}
+
+.전체 .셋째>div.세자1 {
+  position: relative;
+  margin-right: 10%;
+  overflow: hidden;
+}
+
+.전체 .셋째>div.세자1>div {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+}
+.전체 .셋째>div.세자1>div h4 {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(255,255,255,0.3);
+  color: #fff;
+  font-size: 40px;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.전체 .셋째>div.세자1>div.세손1 {
+  background-image: url(img/img1.jpg);
+  background-size: cover;
+  z-index: 10; /*값이 1보다 많으면 됨. 원래는 조건이 같아서 아래쪽에 적힌 하가 위쪽에 위치했는데 z-index 값을 주면 상이 위쪽으로 올라오게됨 */
+  left: 100%;
+  transition: 0.3s;
+}
+
+.전체 .셋째>div.세자1:hover>div.세손1 {
+  left: 0;
+}
+
+.전체 .셋째>div.세자1>div.세손2 {
+  background-image: url(img/img2.jpg);
+  background-size: cover;
+}
+
+.전체 .셋째>div.세자2 {
+  position: relative;
+  overflow: hidden;
+}
+.전체 .셋째>div.세자2 video{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 120%;
+}
+
+.전체 .넷째 {
+  background-color: #fff;
+  width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.전체 .넷째>div {
+  background-color: #222;
+  width: 47.5%;
+  height: 200px;
+  float: left;
+}
+
+.전체 .넷째 .네자1 {
+  position: relative;
+  margin-right: 5%;
+  background-image: url(img/img1.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.전체 .넷째 .네자1 h4 {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #222;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.전체 .넷째 .네자1 .상 {
+  position: absolute;
+  left: 100%; top: 0;
+  width: 100%; height: 100%;
+  background: url(img/img2.jpg);
+  background-size: cover;
+  transition: 0.3s;
+}
+
+.전체 .넷째 .네자1:hover .상 {
+  left: 0;
+}
+
+.넷째 .네자2 {
+  position: relative;
+  overflow: hidden;
+}
+.넷째 .네자2 video{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 120%;
+}

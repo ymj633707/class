@@ -1,0 +1,120 @@
+* {margin: 0; padding: 0;}
+
+.치료::after{content: ""; clear: both; display: block;}
+
+.박일수 {
+  background-color: #2B3A55;
+  width: 1000px;
+  margin: auto;
+  /*margin-left: auto;
+  margin-right: auto;*/
+
+  padding: 20px; /* 상하좌우 */
+  padding: 20px 40px; /* 상하 좌우 */
+  padding: 20px 40px 50px; /* 상 좌우 하 */
+  padding: 10px 20px 30px 40px; /* 상 오른쪽 아래 왼쪽*/
+}
+.박일수 .박첫째{
+  background-color: #FEFCF3;
+  padding: 20px;}
+
+.박일수 .박첫째 .자식 {
+  width: 49%;
+  height: 200px;
+  float: left;
+}
+
+.박일수 .박첫째 .자식.첫째자식1 {
+  background-color: #FFE15D;
+  margin-right: 2%;
+  padding: 20px;
+  border: 5px solid red;
+  box-sizing: border-box; 
+  /* 
+    box-sizing: border-box;  
+    width + padding + border를 영역안으로 포함 */
+}
+
+.박일수 .박첫째 .자식.첫째자식2 {
+  background-color: #EB6440;
+}
+
+.박일수 .박첫째 .자식.첫째자식2 object{
+  width: 100%;
+  height: 100%;
+}
+
+.박일수 .박둘째 {
+  background-color: #F5EBE0;
+  padding: 20px;
+  margin-top: 30px;
+  /* =margin: 30px 0 0; */
+}
+/* 
+  띄워쓰기 --> 자손
+  > --> 직계자식 */
+.박일수 .박둘째>div{
+  background-color: #D23369;
+  width: 23.5%;
+  float: left;
+  height: 100px;
+  margin-right: 2%;
+}
+.박일수 .박둘째>div.둘자식1{
+  background-image: url(img.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: 75px 15px; /* X축 Y축*/
+  transform: 0.3s;
+  }
+
+  .박일수 .박둘째>div.둘자식1:hover{
+    background-size: 100px;
+    background-position: center center;
+  }
+
+.박일수 .박둘째>div.둘자식2{
+  background: #ffb26b url(img2.png) no-repeat 75px 15px /80px; 
+  /* /사이즈 : background-size 로 적거나 아니면 별도로  background-size 적용 */
+  transition: 1s; /* hover에 안주는 이유는 hover에 주면 마우스 뗄때는 적용이 안되기때문에 여기에 줌 */
+}
+.박일수 .박둘째>div.둘자식2:hover{background-image: url(img3.png);}
+.박일수 .박둘째>div.둘자식3{
+  overflow: hidden;  /* 영역보다 큰 자식요소를 숨김 */
+}
+.박일수 .박둘째>div.둘자식3 iframe{
+  width: 100%;
+}
+
+.박일수 .박둘째>div.둘자식4{
+  margin-right: 0; 
+  /* 
+  div에 margin 2%를 주면 둘자식4에도 margin이 붙기때문에 한줄에 위치할수없게된다*/
+  }
+  .박일수 .박둘째>div.둘자식4 iframe{
+    width: 100%;
+  }
+
+.박일수 .박세째 {
+  background-color: #DBA39A;
+  margin-top: 30px;
+  padding: 20px;
+  color: white; /* 글자색 적용(인라인)-자손에게 상속이 된다 */
+  font-size: 20px;
+  text-align: center;
+  line-height: 200px;
+}
+
+.박일수 .박세째>div {
+  background-color: aquamarine;
+  width: 32%; /*최대 소수점은 4자리까지 된다 */
+  height: 200px;
+  float: left;
+  margin-right: 2%;
+ }
+
+.박일수 .박세째>div.세자식1 {}
+.박일수 .박세째>div.세자식2 {}
+.박일수 .박세째>div.세자식3 {
+  margin-right: 0;
+}

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0;}
+
+.wrap {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #FFDBA4;
+  padding: 200px 0;
+  margin-top: 50px;
+  /* margin 병합 현상이 일어나서 margin적용이 안된다면 그 부모한테 padding을 잡아주면 된다 */
+}
+.wrap>div {
+  background-color: #FFB3B3;
+  height: 300px;
+  border-top: 1px solid #F65A83;
+}
+
+.wrap>div+div { /* + 형제를 뜻함
+  @+@은 내 위에 형제가 있을 경우에만 조건에 맞음 */
+  margin-top: 200px;
+}
+
+.wrap .section2 div {
+  margin-top: 50px;
+}

@@ -1,0 +1,95 @@
+@charset "UTF-8"; /* 한글을 안깨지게 해줌 */
+
+* {margin: 0; padding: 0;} /*예측하지못하는 공간을 빼줌 */
+
+.치료::after {content: ""; clear: both; display: block;}
+
+.전체 {
+  position: relative;
+  background-color: gray;
+  width: 600px;
+  border: 5px solid #000;
+  margin-left: 100px;
+  margin-top: 200px;
+}
+.전체>div {
+  width: 150px;
+  height: 150px;
+}
+.전체 .pink{
+  background-color: pink;
+  position: static;
+  left: 50px;  /*기본값이므로 방향 지정해도 움직이지않는다 */
+}
+.전체 .green{
+  background-color: green;
+  position: relative;
+  /* 원래 자신의 위치를 기억함
+  주위에 아무런 영향을 주지않는다
+  left, top의 기준은 원래 자신의 위치를 기준으로 배치
+  */
+  left: 250px; top: 50px; /*원래 위치에서 얼마나 떨어지는지를 뜻함 */
+}
+.전체 .red{
+  background-color: red;
+  position: absolute;
+  /* 
+  원래 가진 자신의 영역을 상실
+  조상을 기준으로 삼는데 조상이 기준이 되기 위해서는 조상의 position이 relative, absolute, fixed이면 기준이 될수있다.
+  부모가 인식하지 못한다
+  */
+  left: 100px; top: 100px;
+}
+.전체 .blue{
+  position: fixed;
+   /* 스크롤을 내려도 지정된 위치에 고정되어 계속보인다
+  퀵메뉴에 많이 사용한다 
+  부모가 인식하지 못하여 자신이 원래 가지고 있던 영역은 사라진다. */
+
+  right: 150px; top: 100px;
+  background-color: blue;
+}
+
+.영역 {
+  margin-top: 50px;
+  background-color: grey;
+  border: 5px solid #000;
+  width: 1000px;
+  margin: 50px auto 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.영역>div {
+  background-color: green;
+  width: 49%;
+  float: left;
+  height: 300px;
+}
+
+.영역>div.포지션1 {
+  margin-right: 2%;
+  position: relative;
+  overflow: hidden;
+}
+
+.영역>div.포지션1 .포자 {
+  width: 0%;
+  height: 0%;
+  background-color: pink;
+  position: absolute;
+  left: 50%; top: 50% ;
+  /*기준은 부모 left는 넓이 / top은 높이 */
+  transform: translate(-50%,-50%); /* center */
+  /* transform: translate(x축,y축); %의 기준이 자신 */
+  transition: 0.5s;
+}
+
+.영역>div.포지션1:hover .포자 {
+  width: 120%;
+  height: 120%;
+}
+
+
+ .space {
+  height: 2000px;
+}

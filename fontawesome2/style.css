@@ -1,0 +1,23 @@
+.section::after {
+  content: "\f6be";
+  /* font awesome 5버전을 사용하기 위해서는 font-family, font-weight가 같이 들어가야함 */
+  font-family: "Font Awesome 5 free";
+  /* 무료버전 사용시 Font Awesome 5 pro->Font Awesome 5 free로 바꿔줘야함 */
+  font-weight: 900;
+}
+
+.wrap2 {
+  position: relative;
+  margin: 50px;
+  width: 400px;height: 400px;
+  background-color: #4E6C50;
+}
+
+.wrap2 .section2{
+  position: absolute;
+  /* calc : 컴퓨터가 계산할수 있도록 하는 코드, - 를 적을때는 한칸 띄우고 적어줘야 음수로 인식함 */
+  left: calc(50% - 50px); top: calc(50% - 50px);
+  /* transform: translate(-50%, -50%); */
+  width: 100px; height: 100px;
+  background-color: #820000;
+}
